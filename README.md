@@ -1,6 +1,7 @@
 # FmTask
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.7.
+## ATTENTION!
+CREATE FILE `secret.ts` DIRECTLY IN MAIN DIRECTORY AND PUT `export const OMDB_API_KEY = 'xxx';` INSIDE
 
 ## Development server
 

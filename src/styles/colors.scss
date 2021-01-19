@@ -1,0 +1,16 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$font-primary-color: #404040;
+
+$white: #ffffff;
+$gray-light: #fafafa;
+$gray: #e6e6e6;
+$gray-dark: #b5b5b5;
+
+$primary-color: mat-palette($mat-indigo);
+
+$success-color: #28db6d;
+$warning-color: #ffbe2c;
+$error-color: #e23e3e;

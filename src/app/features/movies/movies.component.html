@@ -1,0 +1,31 @@
+<mat-card class="wrapper">
+  <form [formGroup]="form" class="form">
+    <mat-form-field class="field" appearance="fill" color="primary">
+      <mat-label>Movie title</mat-label>
+
+      <input matInput formControlName="title">
+
+      <mat-error>Title is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="field" appearance="fill" color="primary">
+      <mat-label>Year</mat-label>
+
+      <input matInput type="number" formControlName="year">
+
+      <mat-error>Year must be in range {{ minYear }} - {{ currentYear }}</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" class="button" (click)="submit()">
+      Search
+    </button>
+  </form>
+</mat-card>
+
+<mat-spinner *ngIf="isLoading$ | async" [diameter]="50"></mat-spinner>
+
+<app-movies-list
+  *ngIf="totalResults > 0 && !(isLoading$ | async)"
+  [movies]="foundMovies"
+  [totalResults]="totalResults">
+</app-movies-list>
