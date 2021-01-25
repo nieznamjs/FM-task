@@ -1,5 +1,13 @@
+@import "src/styles/variables";
+
 .wrapper {
-  width: 600px;
+  width: 100%;
+  max-width: 720px;
+
+  @media (min-width: $screen-M) {
+    width: 740px;
+    max-width: none;
+  }
 }
 
 .table {

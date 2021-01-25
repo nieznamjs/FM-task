@@ -1,9 +1,6 @@
 import { Movie } from '../movie.interface';
 import { MoviesApiBooleanResponse } from '../../constants';
 
-export interface SearchMoviesResponse {
+export interface GetMovieResponse extends Movie {
   Response: MoviesApiBooleanResponse;
-  Search?: Movie[];
-  totalResults?: string;
-  Error?: string;
 }

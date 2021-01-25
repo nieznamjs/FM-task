@@ -7,6 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
+import { MatSelectModule } from '@angular/material/select';
 
 const materialModules = [
   MatCardModule,
@@ -17,6 +18,7 @@ const materialModules = [
   MatPaginatorModule,
   MatProgressSpinnerModule,
   MatTableModule,
+  MatSelectModule,
 ];
 
 @NgModule({

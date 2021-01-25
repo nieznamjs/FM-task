@@ -1,1 +1,15 @@
-<p>movie-details works!</p>
+<mat-spinner *ngIf="isLoading$ | async" [diameter]="50" class="loader"></mat-spinner>
+
+<mat-card class="wrapper" *ngIf="(movie$ | async) as movie">
+  <button mat-mini-fab class="back-btn" (click)="goBack()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+
+  <h2>Title: {{ movie.Title }}</h2>
+
+  <p>Year: {{ movie.Year }}</p>
+
+  <p>Production: {{ movie.Production }}</p>
+
+  <p>Actors: {{ movie.Actors }}</p>
+</mat-card>

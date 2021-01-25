@@ -1,7 +1,7 @@
 # FmTask
 
 ## ATTENTION!
-CREATE FILE `secret.ts` DIRECTLY IN MAIN DIRECTORY AND PUT `export const OMDB_API_KEY = 'xxx';` INSIDE
+CREATE FILE `secret.ts` DIRECTLY IN MAIN DIRECTORY AND PUT `export const OMDB_API_KEY = 'xxx';` WITH CORRECT API KEY INSIDE
 
 ## Development server
 

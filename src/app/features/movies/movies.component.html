@@ -16,7 +16,17 @@
       <mat-error>Year must be in range {{ minYear }} - {{ currentYear }}</mat-error>
     </mat-form-field>
 
-    <button mat-raised-button color="primary" class="button" (click)="submit()">
+    <mat-form-field class="field" appearance="fill" color="primary">
+      <mat-label>Type</mat-label>
+
+      <mat-select formControlName="type">
+        <mat-option *ngFor="let type of movieTypes" [value]="type.key">
+          {{ type.label }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" class="button" (click)="search()">
       Search
     </button>
   </form>
@@ -24,8 +34,14 @@
 
 <mat-spinner *ngIf="isLoading$ | async" [diameter]="50"></mat-spinner>
 
+<mat-error *ngIf="errorMessage">
+  {{ errorMessage }}
+</mat-error>
+
 <app-movies-list
   *ngIf="totalResults > 0 && !(isLoading$ | async)"
   [movies]="foundMovies"
-  [totalResults]="totalResults">
+  [totalResults]="totalResults"
+  [currentPage]="currentPage"
+  (pageChange)="onPageChange($event)">
 </app-movies-list>

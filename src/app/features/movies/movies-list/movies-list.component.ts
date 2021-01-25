@@ -1,25 +1,26 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+
 import { Movie } from '../../../shared/interfaces';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-movies-list',
   templateUrl: './movies-list.component.html',
   styleUrls: ['./movies-list.component.scss']
 })
-export class MoviesListComponent implements OnInit {
+export class MoviesListComponent {
+  @Input() public movies: Movie[];
+  @Input() public totalResults: number;
+  @Input() public currentPage: number;
 
-  @Input() movies: Movie[];
-  @Input() totalResults: number;
+  @Output() public pageChange = new EventEmitter<number>();
 
   public displayedColumns = [
     'Title',
     'Year',
   ];
 
-  constructor() { }
-
-  ngOnInit(): void {
-    console.log(this.movies)
+  public onPageChange(event: PageEvent): void {
+    this.pageChange.emit(event.pageIndex + 1);
   }
-
 }
